@@ -6,9 +6,8 @@ using UnityEngine.UI;
 public class CenaController : MonoBehaviour
 {
     public Text txtTempo;
-    public Text txtQuantidade;
-    private float tempo = 0;
-    public int quantidadeItems = 0;
+    float tempo = 0;
+
     
 
     public int pontos = 0;
@@ -30,8 +29,7 @@ public class CenaController : MonoBehaviour
     {
         tempo += Time.deltaTime;
         txtTempo.text = "Tempo: " + tempo;
-        txtQuantidade.text = "Items: " + quantidadeItems;
-        killConter.text = "Baixas: " + pontos;
+        killConter.text = "Kills: " + pontos;
     }
 
     public void AumentarPontos()

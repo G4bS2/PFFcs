@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DispararRifle : MonoBehaviour
+public class DispararPistol : MonoBehaviour
 {
     #region // variaveis
     public int ammo = 30;
@@ -17,9 +16,9 @@ public class DispararRifle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
         #region // atira
-        if (Input.GetMouseButton(0) && ammo > 0 )
+        if (Input.GetMouseButtonDown(0) && ammo > 0)
         {
             var ba = Instantiate(Bala, canoDaArma.transform.position, canoDaArma.transform.rotation);
             ammo--;
@@ -27,12 +26,12 @@ public class DispararRifle : MonoBehaviour
             Destroy(ba, 3f);
         }
         #endregion
-        
+
         ammoDisplay.text = "Ammo: " + ammo; //mostra quantas balas ainda tem no pente      
     }
     public void AddAmmo(int amount)
     {
         ammo += amount;
     }
-    
+
 }
