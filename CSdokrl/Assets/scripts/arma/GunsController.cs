@@ -12,7 +12,7 @@ public class GunsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rifle.SetActive(false);
+        //rifle.SetActive(false);
         Deagle.SetActive(false);
     }
 
@@ -23,24 +23,25 @@ public class GunsController : MonoBehaviour
         {
             rifle.SetActive(true);
             Deagle.SetActive(false);
-            Debug.Log("rifle out");
+            Debug.Log("com rifle");
         }
-        if (Input.GetKeyDown(secundaria) && temDeagle)
+        if (Input.GetKeyDown(secundaria))
         {
             rifle.SetActive(false);
             Deagle.SetActive(true);
-            Debug.Log("Deagle out");
+            Debug.Log("com Deagle");
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Deagle"))
-        {
-            temDeagle = true;
-            Destroy(collision.gameObject);
-            Debug.Log("Deagle recebido");
-        }
+   //private void OnCollisionEnter(Collision collision)
+   // {
+   //     if (collision.collider.tag == "Deagle" )
+   //     {
+   //         Debug.Log("Deagle recebido");
+   //         temDeagle = true;
+   //         Destroy(collision.gameObject);
+            
+   //     }
         
 
-    }
+   // }
 }
