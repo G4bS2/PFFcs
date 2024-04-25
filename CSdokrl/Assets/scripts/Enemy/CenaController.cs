@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CenaController : MonoBehaviour
 {
-    public Text txtTempo;
+    //public Text txtTempo;
     float tempo = 0;
 
     
@@ -28,7 +28,7 @@ public class CenaController : MonoBehaviour
     void Update()
     {
         tempo += Time.deltaTime;
-        txtTempo.text = "Tempo: " + tempo;
+        //txtTempo.text = "Tempo: " + tempo;
         killConter.text = "Kills: " + pontos;
     }
 
