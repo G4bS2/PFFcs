@@ -1360,6 +1360,7 @@ MonoBehaviour:
   acelerador: 304
   freio: 306
   ligado: 0
+  temCombustivel: 1
 --- !u!54 &782257308
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1407,9 +1408,12 @@ MonoBehaviour:
   Camera1P: {fileID: 1447671482}
   Camera3P: {fileID: 637611440}
   CameraRetrovisor: {fileID: 125599598}
+  camMinimapa: {fileID: 1641088180}
   aviaoController: {fileID: 782257307}
   trocaCamera: 9
   espelho: 122
+  ligaMiniMapa: 99
+  minimapaIsOn: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,6 +2248,98 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639524769}
   m_CullTransparentMesh: 1
+--- !u!1 &1641088177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1641088178}
+  - component: {fileID: 1641088180}
+  - component: {fileID: 1641088179}
+  m_Layer: 0
+  m_Name: Minimapa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1641088178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641088177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.762606, y: 0.0032333941, z: -0.003812057, w: 0.64684397}
+  m_LocalPosition: {x: 6.2203674, y: 873.7527, z: 161.05074}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 782257311}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!81 &1641088179
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641088177}
+  m_Enabled: 1
+--- !u!20 &1641088180
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641088177}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0.74
+    y: 0.61
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1534
+  field of view: 3.9876707
+  orthographic: 1
+  orthographic size: 33.79149
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1658637232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,6 +2580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Super_Spitfire
       objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 29f96d9f927cf864db7fdfb707b89203, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400022, guid: 29f96d9f927cf864db7fdfb707b89203, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.39
@@ -2536,6 +2636,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 400022, guid: 29f96d9f927cf864db7fdfb707b89203, type: 3}
       insertIndex: 2
       addedObject: {fileID: 125599600}
+    - targetCorrespondingSourceObject: {fileID: 400022, guid: 29f96d9f927cf864db7fdfb707b89203, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1641088178}
     - targetCorrespondingSourceObject: {fileID: 400022, guid: 29f96d9f927cf864db7fdfb707b89203, type: 3}
       insertIndex: -1
       addedObject: {fileID: 694051791}

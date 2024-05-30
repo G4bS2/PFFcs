@@ -17,6 +17,7 @@ public class movimentoAviaoController : MonoBehaviour
     [SerializeField] private KeyCode freio;
     private float velocidade = 0;
     public bool ligado = false;
+    public bool temCombustivel = true;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class movimentoAviaoController : MonoBehaviour
             giroDaElice();
             movimento();
         }
+
     }
     
     public void movimento()
